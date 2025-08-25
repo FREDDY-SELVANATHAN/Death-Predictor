@@ -1,0 +1,265 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #000000;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #ffffff;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('Assets/Bg.jpg') center/cover;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.overlay-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  height: 90%;
+  margin: auto;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.left-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.scene {
+  position: relative;
+  width: 800px;
+  height: 500px;
+  background: transparent;
+  display: flex;
+  align-items: flex-end;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+#malak-character {
+  position: absolute;
+  bottom: 30px;
+  left: 100px;
+  width: 250px;
+  height: auto;
+  transition: left 4s ease-in-out, opacity 3s ease-in-out, transform 3s ease-in-out;
+  transform: scaleX(-1);
+  z-index: 10;
+  filter: brightness(1.1) contrast(1.2);
+}
+
+#coffin {
+  position: absolute;
+  bottom: 30px;
+  right: 100px;
+  width: 300px;
+  height: auto;
+  z-index: 5;
+  filter: brightness(1.1);
+}
+
+.right-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.input-box {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 30px;
+  border-radius: 15px;
+  width: 350px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.input-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: #ffffff;
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #cccccc;
+  font-size: 1em;
+}
+
+.input-box input, 
+.input-box select, 
+.input-box button {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.input-box input, 
+.input-box select {
+  background: rgba(20, 20, 20, 0.9);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.input-box input:focus, 
+.input-box select:focus {
+  outline: none;
+  border-color: #ffffff;
+  background: rgba(40, 40, 40, 0.9);
+}
+
+.input-box button {
+  background: #ffffff;
+  color: #000000;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 15px;
+  border: 1px solid #ffffff;
+  transition: all 0.3s ease;
+}
+
+.input-box button:hover {
+  background: #000000;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.input-box button:active {
+  transform: scale(0.95);
+}
+
+.file-upload {
+  margin: 8px 0;
+}
+
+.file-upload input[type="file"] {
+  display: none;
+}
+
+.file-upload label {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: rgba(20, 20, 20, 0.9);
+  color: #cccccc;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.file-upload label:hover {
+  background: rgba(40, 40, 40, 0.9);
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.file-upload label.dragover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.result-box {
+  margin-top: 20px;
+  min-height: 50px;
+  display: none;
+}
+
+.result-prediction,
+.result-error,
+.result-death,
+.result-journey {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+  color: #ffffff;
+}
+@media (max-width: 1200px) {
+  .overlay-box {
+    flex-direction: column;
+    height: auto;
+    min-height: 90vh;
+  }
+  
+  .left-side, .right-side {
+    width: 100%;
+    padding: 20px 0;
+  }
+  
+  .scene {
+    width: 600px;
+    height: 400px;
+  }
+  
+  .input-box {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .overlay-box {
+    width: 98%;
+    padding: 20px;
+  }
+  
+  .scene {
+    width: 500px;
+    height: 300px;
+  }
+  
+  #malak-character {
+    width: 200px;
+    left: 80px;
+  }
+  
+  #coffin {
+    width: 250px;
+    right: 80px;
+  }
+  
+  .input-box {
+    padding: 25px 20px;
+  }
+  
+  .input-box h2 {
+    font-size: 1.8em;
+  }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Death Predictor - Malak</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="overlay-box">
+    
+    <div class="left-side">
+      <div class="scene">
+        <img src="Assets/Malak.png" alt="Malak" id="malak-character">
+        <img src="Assets/Coffin for Malak.png" alt="Coffin" id="coffin">
+      </div>
+    </div>
+    <div class="right-side">
+      <div class="input-box">
+        <h2>Death Predictor</h2>
+        <p class="subtitle">Discover your fate...</p>
+        
+        <input type="text" id="name" placeholder="Enter your name">
+        <input type="number" id="age" placeholder="Enter your age">
+        
+        <select id="gender">
+          <option value="" disabled selected>Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+
+        <input type="text" id="locality" placeholder="Enter your locality">
+        
+        <div class="file-upload">
+          <input type="file" id="image" accept="image/*">
+          <label for="image" id="file-label">📷 Upload your image</label>
+        </div>
+        
+        <input type="text" id="food" placeholder="Favorite food">
+        
+        <button id="predict-btn">🔮 Predict Death</button>
+        <div id="result" class="result-box"></div>
+      </div>
+    </div>
+  </div>
+  <audio id="walk-audio" src="Assets/walk.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
