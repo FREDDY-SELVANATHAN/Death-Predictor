@@ -64,20 +64,31 @@ body::before {
   left: 100px;
   width: 250px;
   height: auto;
-  transition: left 4s ease-in-out, opacity 3s ease-in-out, transform 3s ease-in-out;
-  transform: scaleX(-1);
+  transform: scaleX(1);
   z-index: 10;
   filter: brightness(1.1) contrast(1.2);
+  transform-origin: center bottom;
 }
 
 #coffin {
   position: absolute;
-  bottom: 30px;
+  bottom: 1px;
   right: 100px;
   width: 300px;
+  transform:rotate(-20deg);
   height: auto;
-  z-index: 5;
+  z-index: 6; 
   filter: brightness(1.1);
+}
+
+#malak-character.is-dead {
+  transition: left 2s ease-in-out, bottom 2s ease-in-out, transform 1.5s ease-in-out;
+  left: calc(35% - 225px);
+  bottom: 100px;
+  transform: scaleX(-1) rotate(72deg) scale(0.40);
+}
+#malak-character.inside {
+  z-index: 5;
 }
 
 .right-side {
